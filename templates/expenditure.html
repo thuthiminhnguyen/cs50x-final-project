@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Expenditure
+{% endblock %}
+
+{{ get_flashed_messages("Bought!") | join(" ") }}
+
+{% block main %}
+    <form action="/expenditure">
+        <h4>BALANCE:   ${{"%.2f"%balance}}</h4>
+        <br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="media-body black text-left">
+                        <h3 class="font-large-1 black mb-0">${{"%.2f"%cash}}</h3> <!--{{cash}}-->
+                        <a href="/cash"><i class="far fa-edit" style="color:black"></i></a>
+                        <span>Cash</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="media-body black text-left">
+                        <h3 class="font-large-1 black mb-0">${{"%.2f"%debit}}</h3>
+                        <a href="/debit"><i class="far fa-edit" style="color:black"></i></a>
+                        <span>Debit</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="media-body black text-left">
+                        <h3 class="font-large-1 black mb-0">${{"%.2f"%credit}}</h3>
+                        <a href="/credit"><i class="far fa-edit" style="color:black"></i></a>
+                        <span>Credit</span>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="media-body black text-left">
+                        <h3 class="font-large-1 black mb-0">${{"%.2f"%loan}}</h3>
+                        <a href="/loan"><i class="far fa-edit" style="color:black"></i></a>
+                        <span>Loan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <h5><b>Your Outcome</b></h5>
+        <a href="/expense" class="btn btn-primary">Add an expenditure</a>
+        <br><br>
+        <table class = "table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Amount of money</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for outcome in outcomes %}
+                <tr>
+                    <td>{{outcome['name']}}</td>
+                    <td>{{outcome['date']}}</td>
+                    <td>${{"%.2f"%outcome['money']}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><b>TOTAL</b></td>
+                    <td colspan="1"></td>
+                    <td><b>${{"%.2f"%total}}</b></td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+
+{% endblock %}

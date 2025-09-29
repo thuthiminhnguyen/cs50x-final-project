@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    New dishes
+{% endblock %}
+
+{% block main %}
+    <form action="/new_recipe" method="get">
+        {% for cook in list_dishes %}
+            <div class="row">
+                <div class="column1">
+                    <h3><b>{{cook["name"]}}</b></h3>
+                    <img src={{cook["url"]}} style="width:100%">
+                </div>
+                <div class="column2" style="text-align: left; margin-top:40px">
+                    <p><b>Account owner's name:</b> {{cook["username"]}}</p>
+                    <p><b>Description:</b> {{cook["description"]}}</p>
+                    <p><b>Ingredient:</b> {{cook["ingredient"]}}</p>
+                    <p><b>Preparation time (minute):</b> {{cook["pre_time"]}}</p>
+                    <p><b>Cooking time (minute):</b> {{cook["cook_time"]}}</p>
+                    <p><b>Directions:</b> {{cook["how"]}}</p>
+                </div>
+            </div>
+            <br><br>
+        {% endfor %}
+    </form>
+{% endblock %}

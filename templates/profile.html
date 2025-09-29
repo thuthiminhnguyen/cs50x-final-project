@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+
+{% block main %}
+    <img src="{{url}}" alt="image", width=200px>
+    <br>
+    <br>
+    <table class = "table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Your profile</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>Full name:</b> {{name}}</td>
+            </tr>
+            <tr>
+                <td><b>Date of birth:</b> {{birth}}</td>
+            </tr>
+            <tr>
+                <td><b>Gender:</b> {{gender}}</td>
+            </tr>
+            <tr>
+                <td><b>Phone number:</b> {{phone}}</td>
+            </tr>
+            <tr>
+                <td><b>Email:</b> {{email}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form action="/profile" method="post">
+        <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4><b>Edit profile</b></h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <i class="fas fa-user prefix grey-text"></i>
+                            <input autocomplete="off" class="form-control" name="name" placeholder="Full name" type="text">
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-calendar prefix grey-text"></i>
+                            <input autocomplete="off" class="form-control" name="birth" placeholder="Date of birth" type="date">
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-transgender prefix grey-text"></i>
+                            <input autocomplete="off" class="form-control" name="gender" placeholder="Gender" type="text">
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-phone prefix grey-text"></i>
+                            <input autocomplete="off" class="form-control" name="phone" placeholder="Phone number" type="text">
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-envelope prefix grey-text"></i>
+                            <input autocomplete="off" class="form-control" name="email" placeholder="Email" type="email">
+                        </div>
+                        <div class="form-group">
+                            <i class="fas fa-link prefix grey-text"></i>
+                            <input autocomplete="off" class="form-control" name="url" placeholder="Image URL" type="text">
+                        </div>
+                        <div class="modal-footer d-flex justify-content-center">
+                            <button class="btn btn-primary" type="submit">Edit</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </form>
+    <br>
+    <div class="text-center">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalRegisterForm">Click to edit your profiles</button>
+    </div>
+{% endblock %}

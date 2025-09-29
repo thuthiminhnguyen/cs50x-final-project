@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Debit
+{% endblock %}
+
+{% block main %}
+    <form action="/debit" method="post">
+        <p style="text-align:center; font-size:18px">Please enter the change of the amount of your <b>DEBIT</b> account</p>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="debit" placeholder="$" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+{% endblock %}

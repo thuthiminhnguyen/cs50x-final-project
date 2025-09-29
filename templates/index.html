@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Main page
+{% endblock %}
+
+{% block main %}
+    <p style="font-size: xx-large; font-family: Brush Script MT;">Let's manage your world together!</p>
+    <!-- Slide show -->
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <img src="https://images.pexels.com/photos/4065146/pexels-photo-4065146.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://images.pexels.com/photos/694740/pexels-photo-694740.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://images.pexels.com/photos/4668356/pexels-photo-4668356.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://images.pexels.com/photos/821724/pexels-photo-821724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="width:100%">
+        </div>
+
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+
+    <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 4000); // Change image every 4 seconds
+    }
+    </script>
+{% endblock %}
