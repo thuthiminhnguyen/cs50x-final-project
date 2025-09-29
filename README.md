@@ -1,4 +1,4 @@
-# Managing Your Daily Life
+# Your Daily Life
 This is my final project for CS50x2021.
 #### Video Demo: [here](https://www.youtube.com/watch?v=g85Rw1S6iVA)
 #### Description:
