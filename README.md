@@ -1,4 +1,5 @@
 # YOUR DAILY LIFE
+This is my final project for CS50x2021.
 #### Video Demo: [here](https://www.youtube.com/watch?v=g85Rw1S6iVA)
 #### Description:
 In the busy life, people will not have much time to control these things, so the page may comfort user after hard working days because the web was designed with a simple theme but with useful tools. People can use this web application to manage there balance and add the recipes that they love. Moreover, the user can see other users so that they can learn from that. My inspiration comes from my friend when she has to write down her expenses every single day. And one more thing is that I have a bad memory, I cannot remember the recipe that my mom teach me, when I was a kid, I had a notebook for that, but now I do not use it anymore so I want to create a website  that I can use to store recipes. Furthermore, since we can see others recipes, it will be a good source for me to learn from other people. This web app also help users save their personal information in case they may forget. Specifically, your phone number, your address, even your photo and etc.
